@@ -1,0 +1,84 @@
+version - major, minor, patch
+
+
+Nodejs - server side platform opensource 
+cross platform runtime environment
+js library
+
+
+public in place of assets
+
+app.config.ts in place of app.module
+-services
+-http client
+
+
+component
+-declaration
+-import
+
+
+app.routes.ts : stores routes in array
+
+
+package.json - mandatory for every npm project
+-list of packages and their version
+-scripts
+-dependencies - use at the build
+-devdependencies - use at development
+
+
+angular.json : configuration or architecture (setting) of our project - build, serve, test config
+starting point of angular application - main.ts
+starting point of brower application - index.html
+
+tsconfig.json : typescript compilation settings
+
+
+app.component.spec.ts file is part of Angular's testing setup—specifically for unit testing your components 
+using Jasmine and Karma (which come pre-configured with Angular projects).
+
+
+CSS Preference Order (from highest to lowest):
+✅ Inline styles (e.g. style="color:red;")
+✅ Component styles (in .component.css)
+✅ Global styles (styles.css, styles.scss)
+✅ External CSS (via angular.json or CDN)
+
+
+Data Binding : Connection between view and business logic (html and ts file)
+one-way data binding - interpolation, property binding (from ts to html),  event binding (from html to ts)
+two-way binding - using ng module (import formsModule)
+using signals (angular 17 onwards)
+
+
+Directive : DOM manipulation within HTML (responsible for changing structure of DOM element.)
+-component directives
+-structural directives : ngIf, ngFor, ngSwitch
+-attributes directives
+(import commonModule)
+
+
+SPA = Single page application 
+physical only one html page that will be continuously rendering
+UI will only get changed, page will be constant
+
+Routing
+
+Router-outlet - its a directive which is responsible to render activated route components
+
+
+Control flow - use of if else for switch in html directly
+
+Service :  function or an object that can be used to share data and behaviour across the application (no base class)
+-logging Service
+-data Service
+-message service
+
+
+Dependency Injection : 
+
+
+Angular constantly checks your app for any data changes to keep the UI in sync.
+ This is called Change Detection, 
+and it happens very frequently — even when you move your mouse or type in a textbox!

@@ -1,0 +1,28 @@
+<p>pipe works!</p>
+<h4>Original Letter : {{text}}</h4>
+<p>{{text | uppercase}}</p>
+<p>{{text | lowercase}}</p>
+<p>{{text | titlecase}}</p>
+
+
+<h4>Original Date : {{curDate}}</h4>
+<p>{{curDate | date}}</p>
+<p>{{curDate | date : 'dd-MM-yy'}}</p>
+<p>{{curDate | date : 'dd/MMM/yyyy'}}</p>
+
+
+<p>{{num | currency}}</p>
+
+<p>{{num /100 | percent}}</p>
+
+
+<p>{{student}}</p>
+<p>{{student | json}}</p>
+
+
+<p>Time:</p>
+<p>{{currentTime}}</p>
+<p>{{currentTime | async | date : 'hh:mm:ss'}}</p>
+
+
+<p>{{checkPipe | customPipe}}</p>

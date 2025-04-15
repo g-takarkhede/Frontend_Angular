@@ -1,0 +1,16 @@
+<p>ifelse works!</p>
+
+@if(isDivVisible){
+    <div>Div is visible</div>
+}
+@else{
+    <div>div is not visible</div>
+}
+<button (click)="toggleDiv()">{{isDivVisible? 'Hide':'Show'}}</button>
+
+@if(num1==num2){
+    <div>Values are same</div>
+}
+
+<input type="text" [(ngModel)]="num1" placeholder="num-1">
+<input type="text" [(ngModel)]="num2" placeholder="num-2">

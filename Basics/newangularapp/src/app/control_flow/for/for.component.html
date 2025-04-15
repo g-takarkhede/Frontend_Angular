@@ -1,0 +1,30 @@
+<p>for works!</p>
+
+<ul>
+    @for(city of cityArray; track $index){
+    <li>{{city}}</li>
+    }
+</ul>
+
+<table>
+    <thead>
+        <th>Sr. No.</th>
+        <th> name </th>
+        <th>Roll no.</th>
+        <th>Status</th>
+        <th>totalMarks</th>
+    </thead>
+    <tbody>
+        @for(stud of studentList; track $index){
+            <tr>
+                <td>{{$index+1}}</td>
+                <td>{{stud.name}}</td>
+                <td>{{stud.rollNo}}</td>
+                <td>{{stud.isActive?'Active':'De-Active'}}</td>
+                <td>{{stud.totalMarks}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

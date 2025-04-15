@@ -1,0 +1,77 @@
+<p>templates works!</p>
+
+<form class="row g-3" #form = "ngForm">
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">First name</label>
+      <input type="text" #fName = "ngModel" [(ngModel)]="studentObj.firstname" name="firstname" class="form-control" id="validationCustom01" required minlength="3">
+      <div class="text-danger">
+        @if ((fName.touched || fName.dirty) && fName.errors?.['required']){
+          <span>This is required</span>
+        }
+        @else if ((fName.touched || fName.dirty) && fName.errors?.['minlength']){
+          <span>min 3 length id required</span>
+        }
+      </div>
+      <div>{{fName.errors | json}} </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Last name</label>
+      <input type="text"  [(ngModel)]="studentObj.lastname" name="lastname" class="form-control" id="validationCustom02" >
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustomUsername" class="form-label">Username</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">&#64;</span>
+        <input type="text"  [(ngModel)]="studentObj.username" name="username" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" >
+        <div class="invalid-feedback">
+          Please choose a username.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">City</label>
+      <input type="text"  [(ngModel)]="studentObj.city" name="city" class="form-control" id="validationCustom03" >
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom04" class="form-label">State</label>
+      <select  [(ngModel)]="studentObj.state" name="state" class="form-select" id="validationCustom04" >
+        <option>Maharashtra</option>
+        <option>Goa</option>
+        <option>Punjab</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid state.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom05" class="form-label">Zip</label>
+      <input type="text"  [(ngModel)]="studentObj.zipcode" name="zipcode" class="form-control" id="validationCustom05" >
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input"  [(ngModel)]="studentObj.isAcceptTerms" name="isAcceptTerms" type="checkbox" value="" id="invalidCheck" >
+        <label class="form-check-label" for="invalidCheck">
+          Agree to terms and conditions
+        </label>
+        <div class="invalid-feedback">
+          You must agree before submitting.
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-danger" (click)="onReset()" type="button">reset</button>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" [disabled] = "form.invalid"  (click)="onSubmit()" type="submit">Submit form</button>
+    </div>
+  </form>
+  <p>{{formValue | json}}</p>

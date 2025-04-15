@@ -1,0 +1,35 @@
+<p>data-binding works!</p>
+
+<button class="btn btn-primary" (click)="goToDirectives()">Go to directives</button>
+
+<div class="interpolation">
+    <h2>{{name}}</h2>
+    <p>{{inputType}}</p>
+    <input type="{{inputType}}">
+</div>
+
+<div class="propertyBinding">
+    <h2 [class]="className">Hello World</h2>
+    <input [type]="inputType" name="" id="" value="{{courseName}}">
+</div>
+
+
+<div class="eventBinding">
+    <button (click) = "showAlert('Hii')">Click me</button>
+    <button (click) = "changeCourseName(courseName)">{{courseName}}</button>
+</div>
+
+<!-- only works on input element -->
+ <!-- Two way data binding -->
+<div class="ngmodel">
+    <input type="{{inputType}}" [(ngModel)]="courseName"> - {{courseName}}
+
+    <input type="checkbox" [(ngModel)]="isIndian">
+
+    <select [(ngModel)]="stateName">
+        <option value="">Select</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Goa">Goa</option>
+        <option value="Panjab">Punjab</option>
+    </select>
+</div>

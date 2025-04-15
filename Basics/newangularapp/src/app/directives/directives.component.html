@@ -1,0 +1,81 @@
+<p>directives works!</p>
+
+<div class="structural-directives">
+    <button class="btn btn-primary" [routerLink]="['/data-binding']">Go to data binding</button>
+    <div class="ngIf-try">
+        <div *ngIf="isCont1Visible" class="cont1">Hello World</div>
+        <button (click)="showCont1()">show</button>
+        <button (click)="hideCont1()">hide</button>
+        <br>
+        <div *ngIf="isCont2Visible" class="cont2">Hello World</div>
+        <button (click)="toggleCont2()">toggle</button>
+        <br>
+        <div *ngIf="num1 == num2" class="cont3">Hello World</div>
+        <input type="text" [(ngModel)]="num1" placeholder="Num 1">
+        <input type="text" [(ngModel)]="num2" placeholder="Num 2">
+
+        <br>
+        <div class="ngmodel">
+            <div *ngIf="isActive" class="cont4">Hello World</div>
+
+            <input type="checkbox" [(ngModel)]="isActive">
+
+            <div *ngIf="selectedState=='Goa'" class="cont5">Hello World</div>
+            <select [(ngModel)]="selectedState">
+                <option value="">Select</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Goa">Goa</option>
+                <option value="Panjab">Punjab</option>
+            </select>
+        </div>
+    </div>
+    <div class="ngFor-try">
+        <select name="" id="">
+            <option *ngFor="let city of cityArray">{{city}}</option>
+        </select>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>sr no.</th>
+                    <th>name</th>
+                    <th>rollNo</th>
+                    <th>status</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let stud of studentList; let sr = index">
+                    <td>{{sr+1}}</td>
+                    <td>{{stud.name}}</td>
+                    <td>{{stud.rollNo}}</td>
+                    <td [ngStyle]="{'background-color': stud.isActive? 'blue': 'red'}">
+                        <span>{{stud.isActive? 'Active': 'De-Active'}}</span>
+                        <!-- <span *ngIf="stud.isActive">Active</span>
+                        <span *ngIf="!stud.isActive">Inactive</span> -->
+                    </td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar" [ngStyle]="{'width':stud.totalMarks +'%'}">  {{stud.totalMarks}} %</div>
+                        </div>
+                        
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="attribute-directives">
+    <!-- ngClass and ngStyle -->
+    <div [ngClass]="div1BgColor">
+        hello
+    </div>
+    <button (click)="addRedClass()">Click1</button>
+    <button (click)="addBlueClass()">Click2</button>
+
+
+    <div [ngClass]="isDiv2Active?'bg-primary':'bg-danger'">click me</div>
+
+    <div [ngStyle]="customStyle">Hello World</div>
+</div>
